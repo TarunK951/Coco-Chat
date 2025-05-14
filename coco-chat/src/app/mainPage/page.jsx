@@ -1,6 +1,10 @@
 import "./style.css";
 function MainPage() {
-  return <div>page</div>;
+  return (
+    <div>
+      <h1>Hello Raju</h1>
+    </div>
+  );
 }
 
 export default MainPage;
