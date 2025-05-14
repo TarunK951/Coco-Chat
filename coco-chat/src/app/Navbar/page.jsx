@@ -17,6 +17,13 @@ function NavBar() {
     setIsDarkMode((prev) => !prev);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleMenu();
+    }
+  };
+
   useEffect(() => {
     document.body.className = isDarkMode ? "darkMode" : "lightMode";
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
@@ -28,15 +35,21 @@ function NavBar() {
   return (
     <div className="nav-bar">
       <div className="nav-logo-container">
-        <img src="/coco.png" alt="Logo" className="nav-logo" />
+        <img
+          src={isDarkMode ? "/coco.png" : "/coco png.png"}
+          alt="Logo"
+          className="nav-logo"
+        />
       </div>
 
       <div
         className="burger-menu"
         onClick={toggleMenu}
+        onKeyDown={handleKeyDown}
         role="button"
         aria-label="Toggle navigation menu"
         aria-expanded={isMenuOpen}
+        tabIndex={0}
       >
         <div className={`line ${isMenuOpen ? "open" : ""}`}></div>
         <div className={`line ${isMenuOpen ? "open" : ""}`}></div>
@@ -55,18 +68,20 @@ function NavBar() {
         </Link>
         <button
           onClick={toggleTheme}
+          className="theme-toggle"
           aria-label={
             isDarkMode ? "Switch to light mode" : "Switch to dark mode"
           }
-          style={{
-            background: "none",
-            border: "none",
-            color: "var(--p-text-color)",
-            cursor: "pointer",
-            fontSize: "1rem",
-          }}
         >
-          {isDarkMode ? "Light Mode" : "Dark Mode"}
+          <img
+            className="shift-logo"
+            src={
+              isDarkMode
+                ? "https://img.icons8.com/?size=100&id=648&format=png&color=ffffff"
+                : "https://img.icons8.com/?size=100&id=45475&format=png&color=000000"
+            }
+            alt=""
+          />
         </button>
       </div>
     </div>
