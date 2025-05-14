@@ -1,5 +1,5 @@
-* {
-  background-color: yellow;
-  color: black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.main-page {
+  color: var(--p-text-color);
+  background-color: var(--bg-color);
+  min-height: 100vh;
 }

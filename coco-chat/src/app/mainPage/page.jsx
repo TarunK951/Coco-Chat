@@ -2,7 +2,14 @@ import "./style.css";
 function MainPage() {
   return (
     <div>
-      <h1>Hello Raju</h1>
+      <div className="main-page">
+        <h1 type="sub-heading" className="k">
+          hi
+        </h1>
+        <h1 type="heading" className="k">
+          hi
+        </h1>
+      </div>
     </div>
   );
 }
