@@ -1,1 +1,59 @@
- 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;500&display=swap");
+
+:root {
+  --p-text-color: #00b497;
+  --s-text-color: #fdfdfd;
+  --bg-color: #0b0b0b;
+
+  --olivine-white: #e8e7d5;
+}
+
+.darkMode {
+  --p-text-color: #00b497;
+  --s-text-color: #fdfdfd;
+  --bg-color: #0b0b0b;
+}
+
+.lightMode {
+  --p-text-color: #0b0b0b;
+  --s-text-color: #111;
+  --bg-color: #ffffff;
+}
+
+html,
+body {
+  font-family: "Roboto Flex", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--s-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+* {
+  font-family: "Roboto Flex", sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle img {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+[type="heading"] {
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+[type="sub-heading"] {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+[type="text"] {
+  font-size: 16px;
+}
