@@ -1,6 +1,6 @@
 // app/header/page.js
 "use client";
-import Image from "next/image";
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import "./style.css";
@@ -28,13 +28,7 @@ function NavBar() {
   return (
     <div className="nav-bar">
       <div className="nav-logo-container">
-        <Image
-          src="/coco.png"
-          alt="Logo"
-          width={200} /* Updated from 160 */
-          height={40} /* Updated from 30 */
-          className="nav-logo"
-        />
+        <img src="/coco.png" alt="Logo" className="nav-logo" />
       </div>
 
       <div

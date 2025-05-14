@@ -1,3 +1,28 @@
+/* style.css */
+
+/* Root variables */
+:root {
+  --p-text-color: #00b497;
+  --s-text-color: #fdfdfd;
+  --bg-color: #0b0b0b;
+  --olivine-white: #e8e7d5;
+  --glow-color: #00b497; /* Default glow color */
+}
+
+.darkMode {
+  --p-text-color: #00b497;
+  --s-text-color: #fdfdfd;
+  --bg-color: #0b0b0b;
+  --glow-color: #00b497; /* Neon green glow for dark mode */
+}
+
+.lightMode {
+  --p-text-color: #0b0b0b;
+  --s-text-color: #111;
+  --bg-color: #ffffff;
+  --glow-color: #00ccaa; /* Brighter teal for light mode glow */
+}
+
 /* Base Navbar Styling */
 .nav-bar {
   display: flex;
