@@ -5,7 +5,6 @@
   --p-text-color: #00b497;
   --s-text-color: #fdfdfd;
   --bg-color: #0b0b0b;
-
   --olivine-white: #e8e7d5;
 }
 
@@ -18,7 +17,7 @@
 .lightMode {
   --p-text-color: #0b0b0b;
   --s-text-color: #111;
-  --bg-color: #ffffff;
+  --bg-color: #e8e7d5;
 }
 
 html,
