@@ -1,18 +1,6 @@
-"use client";
-import { useState } from "react";
 import "./style.css";
 
 function MainPage() {
-  // State for dark/light mode
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  // Toggle mode
-  const toggleMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle("dark-mode", !isDarkMode);
-    document.body.classList.toggle("light-mode", isDarkMode);
-  };
-
   // Generate   particles with random properties
   const smokeParticles = Array.from({ length: 30 }, (_, index) => {
     const size = Math.random() * 6 + 8; // Random size between 8px and 14px
