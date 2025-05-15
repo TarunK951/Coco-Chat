@@ -1,5 +1,4 @@
 import "./style.css";
-
 function MainPage() {
   // Generate   particles with random properties
   const smokeParticles = Array.from({ length: 30 }, (_, index) => {
@@ -8,7 +7,7 @@ function MainPage() {
     const top = Math.random() * 90 + 2; // Random top between 5% and 95%
     const moveX = (Math.random() - 0.4) * 40; // Random moveX between -20px and 20px
     const moveY = (Math.random() - 0.4) * 50; // Random moveY between -25px and 25px
-    const delay = Math.random() * 3; // Random delay between 0s and 5s
+    const delay = Math.random() * 2; // Random delay between 0s and 5s
 
     return (
       <div
@@ -29,7 +28,26 @@ function MainPage() {
 
   return (
     <div className="main-page">
-      <div className="main-details">{smokeParticles}</div>
+      <div className="main-details">
+        {smokeParticles}
+        <div className="main-content frosted-glass">
+          <img className="main-image" src="happy robo.svg" alt="" />
+          <div className="main-text">
+            <p type="heading" className="main-name">
+              CoCo-Chat
+            </p>
+
+            <p type="text" className="main-info">
+              A Chat Bot Made for websites and assistance
+            </p>
+            <button className="main-btn">
+              <p type="text" className="main-info">
+                Try Here
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
