@@ -12,7 +12,6 @@
   flex-direction: column;
   gap: 16px;
   font-family: Arial, sans-serif;
-  color: var(--bg-color);
 }
 
 .signup-title {
