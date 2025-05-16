@@ -1,14 +1,10 @@
-.login-page {
-  min-height: 100%;
-}
-
 /* Container with transparent and blurred background */
 .login-container {
   max-width: 400px;
   margin: 80px auto;
   padding: 30px;
   border-radius: 12px;
-  background: var(--login);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -23,7 +19,7 @@
   text-align: center;
   font-size: 28px;
   margin-bottom: 12px;
-  color: var(--p-text-color);
+  color: #fff;
 }
 
 /* Input field styling */
@@ -32,13 +28,13 @@
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  background-color: var(--input);
-  color: var(--p-text-color);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 /* Placeholder text color */
 .login-input::placeholder {
-  color: var(--bg-color);
+  color: #ddd;
 }
 
 /* Forgot password link styling */
@@ -48,7 +44,7 @@
 }
 
 .forgot-password a {
-  color: var(--s-text-color);
+  color: #fff;
   text-decoration: none;
 }
 
@@ -60,7 +56,7 @@
 .login-button {
   padding: 12px;
   font-size: 16px;
-  background-color: var(--p-text-color);
+  background-color: #00b497;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -69,7 +65,7 @@
 }
 
 .login-button:hover {
-  background-color: var(--p-text-color);
+  background-color: #69cbbb;
 }
 
 /* Sign-up prompt styling */

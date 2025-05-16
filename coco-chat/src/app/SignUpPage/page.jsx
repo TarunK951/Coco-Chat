@@ -1,11 +1,13 @@
 "use client";
-
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { auth } from "../firebase"; // Update path based on your folder structure
+import React, { useState } from "react";
 import "./style.css";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase"; // Adjust path if needed
+import { useRouter } from "next/navigation";
 
 export default function SignupPage() {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     fullName: "",
     emailOrMobile: "",
@@ -22,13 +24,11 @@ export default function SignupPage() {
   const handleSignup = async () => {
     const { emailOrMobile, password, confirmPassword } = formData;
 
-    // Check if passwords match
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       return;
     }
 
-    // Basic email format check
     if (!emailOrMobile.includes("@")) {
       setError("Please enter a valid email address.");
       return;
@@ -36,8 +36,9 @@ export default function SignupPage() {
 
     try {
       await createUserWithEmailAndPassword(auth, emailOrMobile, password);
-      alert("User created successfully!");
       setError("");
+      alert("Signup successful!");
+      router.push("./LoginPage"); // ✅ Redirect to login page
     } catch (err) {
       console.error(err);
       setError(err.message);
@@ -96,7 +97,7 @@ export default function SignupPage() {
       {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
 
       <div className="login-text">
-        Already have an account? <a href="#">Login</a>
+        Already have an account? <a href="./LoginPage">Login</a>
       </div>
     </div>
   );

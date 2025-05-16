@@ -1,20 +1,41 @@
 "use client";
 import { useState } from "react";
-import "./style.css"; // Import the CSS file
+import "./style.css";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase"; // adjust this path if needed
+import { useRouter } from "next/navigation"; // for client-side navigation
 
 export default function LoginPage() {
+  const router = useRouter();
+
   const [credentials, setCredentials] = useState({
     identifier: "",
     password: "",
   });
 
+  const [error, setError] = useState("");
+
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleLogin = () => {
-    console.log("Logging in with:", credentials);
-    alert("Login button clicked!");
+  const handleLogin = async () => {
+    const { identifier, password } = credentials;
+
+    // Simple email validation (optional)
+    if (!identifier.includes("@")) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      await signInWithEmailAndPassword(auth, identifier, password);
+      setError("");
+      router.push("/home"); // ✅ redirect on successful login
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Invalid email or password.");
+    }
   };
 
   return (
@@ -48,6 +69,10 @@ export default function LoginPage() {
           <button className="login-button" onClick={handleLogin}>
             Login
           </button>
+
+          {error && (
+            <p style={{ color: "red", marginTop: "10px" }}>{error}</p>
+          )}
 
           <div className="signup-text">
             Don't have an account? <a href="./SignUpPage">Sign up</a>
