@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./style.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase"; // adjust this path if needed
+import { auth } from "../../firebase"; // adjust this path if needed
 import { useRouter } from "next/navigation"; // for client-side navigation
 
 export default function LoginPage() {
@@ -63,7 +63,7 @@ export default function LoginPage() {
           />
 
           <div className="forgot-password">
-            <a href="#">Forgot Password?</a>
+            <a href="./ForgotPasswordPage">Forgot Password?</a>
           </div>
 
           <button className="login-button" onClick={handleLogin}>
