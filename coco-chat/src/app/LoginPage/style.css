@@ -33,7 +33,7 @@
   border-radius: 8px;
   border: 1px solid #ccc;
   background-color: var(--input);
-  color: var(--p-text-color);
+  color: var(--s-text-color);
 }
 
 /* Placeholder text color */
