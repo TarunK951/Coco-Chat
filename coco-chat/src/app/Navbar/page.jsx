@@ -66,6 +66,9 @@ function NavBar() {
         <Link href="/contact" onClick={toggleMenu}>
           Contact Us
         </Link>
+          <Link href="/LoginPage" onClick={toggleMenu}>
+          Login
+        </Link>
         <button
           onClick={toggleTheme}
           className="theme-toggle"
