@@ -60,11 +60,14 @@ function NavBar() {
         <Link href="/" onClick={toggleMenu}>
           HOME
         </Link>
-        <Link href="/about" onClick={toggleMenu}>
+        <Link href="/aboutUs" onClick={toggleMenu}>
           ABOUT
         </Link>
         <Link href="/contact" onClick={toggleMenu}>
           Contact Us
+        </Link>
+          <Link href="/LoginPage" onClick={toggleMenu}>
+          Login
         </Link>
         <button
           onClick={toggleTheme}
