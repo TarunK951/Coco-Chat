@@ -12,12 +12,16 @@
   --p-text-color: #00b497;
   --s-text-color: #fdfdfd;
   --bg-color: #0b0b0b;
+  --login: #555555;
+  --input: #999999;
 }
 
 .lightMode {
   --p-text-color: #0b0b0b;
   --s-text-color: #433f3f;
   --bg-color: #f5f5efde;
+  --login: #777777;
+  --input: #333333;
 }
 
 html,
@@ -27,6 +31,7 @@ body {
   color: var(--s-text-color);
   transition: background-color 0.3s ease, color 0.3s ease,
     border-color 0.3s ease, box-shadow 0.3s ease;
+  min-height: 100vh;
 }
 
 * {
