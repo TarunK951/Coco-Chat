@@ -1,7 +1,7 @@
 .main-page {
   color: var(--p-text-color);
   background-color: var(--bg-color);
-  min-height: 100vh;
+  min-height: fit-content;
 }
 
 .main-details {
@@ -10,6 +10,173 @@
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  padding-top: 120px;
+}
+
+.main-image {
+  width: 350px;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding-right: 40px;
+  gap: 10px;
+  padding: 25px;
+}
+
+.main-name {
+  font-size: 42px;
+}
+
+.main-info {
+  color: var(--s-text-color);
+}
+
+/* Futuristic neon-raised button */
+.main-btn {
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 200px; /* Adjustable */
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--p-text-color), 0.3),
+    rgba(var(--p-text-color), 0.5)
+  );
+  color: var(--s-text-color);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+/* Default subtle neon outline */
+.main-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(var(--p-text-color), 0.4);
+  z-index: -1;
+}
+
+/* Hover: Raise and neon shadow */
+.main-btn:hover {
+  transform: translateY(-5px); /* Button lifts */
+  box-shadow: 0 10px 20px rgba(var(--p-text-color), 0.7); /* Bottom neon shadow */
+}
+
+/* Click: Press and flash */
+.main-btn:active {
+  transform: translateY(-2px); /* Slight press */
+  box-shadow: 0 5px 10px rgba(var(--p-text-color), 0.5);
+}
+
+.main-btn:active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: flash 0.4s ease-out;
+  z-index: 0;
+}
+
+/* Text styling */
+.main-info {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Match your app */
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+/* Hover: Text pulse */
+.main-btn:hover .main-info {
+  transform: scale(1.05); /* Subtle pulse */
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+/* Neon pulse animation for text */
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(var(--p-text-color), 0.5);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(var(--p-text-color), 0.8),
+      0 0 15px rgba(var(--p-text-color), 0.6);
+  }
+}
+
+/* Flash animation for click */
+@keyframes flash {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.3;
+  }
+  100% {
+    width: 150px;
+    height: 120px;
+    opacity: 0;
+  }
+}
+
+/* Mode-specific tweaks */
+body.darkMode .main-btn {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 180, 151, 0.3),
+    rgba(0, 180, 151, 0.5)
+  );
+  color: #fdfdfd;
+}
+
+body.darkMode .main-btn::before {
+  box-shadow: 0 0 8px rgba(0, 180, 151, 0.4);
+}
+
+body.darkMode .main-btn:hover {
+  box-shadow: 0 10px 20px rgba(0, 180, 151, 0.7);
+}
+
+body.lightMode .main-btn {
+  background: linear-gradient(
+    135deg,
+    rgba(11, 11, 11, 0.3),
+    rgba(11, 11, 11, 0.5)
+  );
+  color: #111;
+}
+
+body.lightMode .main-btn::before {
+  box-shadow: 0 0 8px rgba(11, 11, 11, 0.4);
+}
+
+body.lightMode .main-btn:hover {
+  box-shadow: 0 10px 20px rgba(11, 11, 11, 0.7);
 }
 
 .main-details::before {
@@ -46,5 +213,76 @@
     transform: translate(calc(var(--move-x, 0) * 2), calc(var(--move-y, 0) * 2))
       scale(1.5);
     opacity: 0;
+  }
+}
+.frosted-glass {
+  width: 80%;
+  height: fit-content;
+  background: rgba(var(--s-text-color), 0.1);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.frosted-glass::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(var(--s-text-color), 0.05); /* Very light tint */
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.15); /* Reduced density */
+  filter: blur(8px); /* Stronger blur for glassy effect */
+  margin: -20px; /* Keeps the offset */
+}
+
+/* Dark mode: Greenish glass */
+body.darkMode .frosted-glass {
+  background: rgba(234, 238, 237, 0.15); /* #00b497 with low opacity */
+  box-shadow: 0 0.5em 1em rgba(236, 244, 243, 0.2); /* Greenish shadow */
+}
+
+body.darkMode .frosted-glass::before {
+  background: rgba(212, 243, 238, 0.01); /* Greenish tint */
+  box-shadow: inset 0 0 50px rgba(213, 243, 238, 0.01); /* Greenish glow */
+}
+
+/* Light mode: Darker glass */
+body.lightMode .frosted-glass {
+  background: rgba(11, 11, 11, 0.15); /* #0b0b0b with low opacity */
+  box-shadow: 0 0.5em 1em rgba(11, 11, 11, 0.2); /* Dark shadow */
+}
+
+body.lightMode .frosted-glass::before {
+  background: rgba(11, 11, 11, 0.1); /* Dark tint */
+  box-shadow: inset 0 0 50px rgba(11, 11, 11, 0.1); /* Dark glow */
+}
+
+/* mobile css */
+@media (max-width: 480px) {
+  .main-details {
+    padding-top: 50px;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-image {
+    width: 250px;
+  }
+  .main-name {
+    font-size: 38px;
+  }
+  .main-info {
+    font-size: 16px;
+    text-align: center;
   }
 }
