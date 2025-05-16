@@ -1,0 +1,25 @@
+/* ForgotPasswordPage/style.css */
+.forgot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+}
+.forgot-input {
+  padding: 0.5rem;
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 300px;
+}
+.forgot-button {
+  padding: 0.5rem 1rem;
+  background: #00b497;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+.forgot-message {
+  margin-top: 1rem;
+  color: lightgreen;
+}
