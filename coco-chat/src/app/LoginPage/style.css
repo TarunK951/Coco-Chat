@@ -1,0 +1,85 @@
+/* Container with transparent and blurred background */
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+.login-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+/* Input field styling */
+.login-input {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Placeholder text color */
+.login-input::placeholder {
+  color: #ddd;
+}
+
+/* Forgot password link styling */
+.forgot-password {
+  text-align: right;
+  font-size: 14px;
+}
+
+.forgot-password a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Login button styling with hover effect */
+.login-button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #005bb5;
+}
+
+/* Sign-up prompt styling */
+.signup-text {
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.signup-text a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.signup-text a:hover {
+  color: #aad4ff;
+}
