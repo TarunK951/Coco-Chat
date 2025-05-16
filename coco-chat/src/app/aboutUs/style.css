@@ -1,0 +1,221 @@
+/* ===== Global Styles with Hidden Scrollbar ===== */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll; /* Scroll allowed */
+
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ==== Hide Scrollbar (all browsers) ==== */
+/* Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* IE and Edge */
+body {
+  -ms-overflow-style: none;
+}
+
+/* ===== Star Backgrounds ===== */
+#stars, #stars2, #stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  content: "";
+}
+
+/* Small stars */
+#stars {
+  background: transparent;
+  box-shadow:
+    1000px 200px #fff, 300px 400px #fff, 500px 100px #fff, 900px 900px #fff,
+    800px 700px #fff, 1200px 200px #fff, 200px 300px #fff;
+  animation: animStar 50s linear infinite;
+}
+
+/* Medium stars */
+#stars2 {
+  background: transparent;
+  box-shadow:
+    600px 400px #fff, 1000px 500px #fff, 200px 800px #fff, 700px 200px #fff;
+  animation: animStar 100s linear infinite;
+}
+
+/* Large stars */
+#stars3 {
+  background: transparent;
+  box-shadow:
+    300px 300px #fff, 800px 1000px #fff, 400px 400px #fff, 1100px 600px #fff;
+  animation: animStar 150s linear infinite;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* ===== About Section Styles ===== */
+.about-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+}
+
+.about-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 1000;
+  margin-bottom: 3rem;
+  color: #fff;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-height: none !important;
+  overflow: visible !important;
+}
+.grid-item {
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.grid-action {
+  font-size: 1.8rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.grid-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.grid-desc {
+  font-size: 1rem;
+  color: #ddd;
+}
+/* Blur background when popup is active */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+/* Full-screen dark overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 10;
+}
+
+/* Popup effect on active grid item */
+.grid-item.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 600px;
+  transform: translate(-50%, -50%) scale(1.05);
+  z-index: 20;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.popup-content {
+  margin-top: 1rem;
+}
+
+.know-more-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #00b497;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.know-more-btn:hover {
+  background-color: #69cbbb;
+}
+
+.details-section {
+  margin-top: 5rem;
+  padding: 3rem 2rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.popup-content {
+  margin-top: 1rem;
+}
+
+
+.details-wrapper {
+  margin-top: 5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.details-section {
+  padding: 2rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  max-width: 1000px;
+  margin-inline: auto;
+}
