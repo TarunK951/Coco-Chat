@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./style.css";
 
 function MainPage() {
@@ -41,11 +42,13 @@ function MainPage() {
             <p type="text" className="main-info">
               A Chat Bot Made for websites and assistance
             </p>
-            <button className="main-btn">
-              <p type="text" className="main-info">
-                Try Here
-              </p>
-            </button>
+            <Link href="/coco">
+              <button className="main-btn">
+                <p type="text" className="main-info">
+                  Try Here
+                </p>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
