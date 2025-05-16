@@ -41,7 +41,7 @@ function MainPage() {
             <p type="text" className="main-info">
               A Chat Bot Made for websites and assistance
             </p>
-            <button className="main-btn" >
+            <button className="main-btn">
               <p type="text" className="main-info">
                 Try Here
               </p>

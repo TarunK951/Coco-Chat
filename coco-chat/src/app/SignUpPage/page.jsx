@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import "./style.css";
+
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 import { auth } from "../firebase"; // Update path based on your folder structure
+import "./style.css";
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
