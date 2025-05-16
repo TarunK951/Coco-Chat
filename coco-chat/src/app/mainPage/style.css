@@ -44,10 +44,11 @@
 
 /* Futuristic neon-raised button */
 .main-btn {
-  margin-top: 10px;
+  min-width: 200px;
+  margin-top: 15px;
+  margin: 25px;
   position: relative;
-  width: 100%;
-  max-width: 200px; /* Adjustable */
+
   padding: 12px 24px;
   border: none;
   border-radius: 10px;
