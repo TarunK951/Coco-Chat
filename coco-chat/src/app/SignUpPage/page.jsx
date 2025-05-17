@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import "./style.css";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase"; // Adjust path if needed
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { auth } from "../../../firebase";
+import "./style.css";
 
 export default function SignupPage() {
   const router = useRouter();
