@@ -15,4 +15,4 @@ apiKey: "AIzaSyCx_qsQW9dIp2NAEEg-b3NUNik7S8CSSi4",
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-export { auth };
+export { app, auth };
