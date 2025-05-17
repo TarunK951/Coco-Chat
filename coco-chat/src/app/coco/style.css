@@ -1,0 +1,15 @@
+.CoCo-name {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 25px 1px 25px;
+}
+.Coco-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px 25px 1px 25px;
+}
+
+.coco-page {
+  padding: 50px;
+}
