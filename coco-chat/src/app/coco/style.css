@@ -1,0 +1,297 @@
+/* bg adjustment  */
+
+.neon-grid-bg {
+  position: fixed;
+  opacity: 0.5;
+  top: 80;
+  left: 0;
+  width: calc(100vw + 100px);
+  height: calc(100vh + 100px);
+  background-image: linear-gradient(
+      to right,
+      var(--p-text-color) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--p-text-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--p-text-color) 20%,
+      transparent 30%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 0%,
+      var(--p-text-color) 20%,
+      transparent 30%
+    );
+  mask-size: 200% 100%, 100% 200%;
+  mask-position: 0 0, 0 0;
+  animation: neonFlowX 8s linear infinite, neonFlowY 8s linear infinite;
+  /* Increased vertical animation speed to 8s to match horizontal */
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes neonFlowX {
+  0% {
+    mask-position: -100px 0;
+  }
+  100% {
+    mask-position: calc(100vw + 100px) 0;
+  }
+}
+
+@keyframes neonFlowY {
+  0% {
+    mask-position: -100px -100px;
+    /* Start off-screen */
+  }
+  100% {
+    mask-position: calc(100vw + 100px) calc(100vh + 100px);
+    /* End off-screen */
+  }
+}
+
+/* */
+
+.CoCo-name {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 25px 1px 25px;
+  align-items: center;
+  color: var(--p-text-color);
+}
+.Coco-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px 25px 1px 25px;
+}
+
+.coco-page {
+  padding: 50px;
+  position: relative;
+  z-index: 115;
+}
+
+.CoCo-btn {
+  min-width: 200px;
+  margin-top: 15px;
+  margin: 25px;
+  position: relative;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--p-text-color), 0.3),
+    rgba(var(--p-text-color), 0.5)
+  );
+  color: var(--s-text-color);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+.CoCo-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(var(--p-text-color), 0.4);
+  z-index: -1;
+}
+
+/* Hover: Raise and neon shadow */
+.CoCo-btn:hover {
+  transform: translateY(-5px);
+  /* Button lifts */
+  box-shadow: 0 10px 20px rgba(var(--p-text-color), 0.7);
+  /* Bottom neon shadow */
+}
+
+/* Click: Press and flash */
+.CoCo-btn:active {
+  transform: translateY(-2px);
+  /* Slight press */
+  box-shadow: 0 5px 10px rgba(var(--p-text-color), 0.5);
+}
+
+.CoCo-btn:active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: flash 0.4s ease-out;
+  z-index: 0;
+}
+.CoCo-btn:hover .main-info {
+  transform: scale(1.05);
+  /* Subtle pulse */
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+body.darkMode .CoCo-btn {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 180, 151, 0.3),
+    rgba(0, 180, 151, 0.5)
+  );
+  color: #fdfdfd;
+}
+
+body.darkMode .CoCo-btn::before {
+  box-shadow: 0 0 8px rgba(0, 180, 151, 0.4);
+}
+
+body.darkMode .CoCo-btn:hover {
+  box-shadow: 0 10px 20px rgba(0, 180, 151, 0.7);
+}
+
+body.lightMode .CoCo-btn {
+  background: linear-gradient(
+    135deg,
+    rgba(11, 11, 11, 0.3),
+    rgba(11, 11, 11, 0.5)
+  );
+  color: #111;
+}
+
+body.lightMode .CoCo-btn::before {
+  box-shadow: 0 0 8px rgba(11, 11, 11, 0.4);
+}
+
+body.lightMode .CoCo-btn:hover {
+  box-shadow: 0 10px 20px rgba(11, 11, 11, 0.7);
+}
+
+/* frosted glass */
+.frosted-glass {
+  position: relative;
+  z-index: 25;
+  width: 80%;
+  height: fit-content;
+  background: rgba(var(--s-text-color), 0.6);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.frosted-glass::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(var(--s-text-color), 0.05);
+  /* Very light tint */
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.4);
+  /* Reduced density */
+  filter: blur(35px);
+  /* Stronger blur for glassy effect */
+  margin: -20px;
+  /* Keeps the offset */
+}
+
+/* mobile anf tab views */
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .coco-page {
+    padding: 30px;
+  }
+
+  .frosted-glass {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .CoCo-btn {
+    min-width: 150px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coco-page {
+    padding: 20px;
+  }
+
+  .frosted-glass {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .CoCo-name {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .Coco-details {
+    padding: 15px;
+  }
+
+  .CoCo-btn {
+    width: 100%;
+    min-width: unset;
+    margin: 15px 0 0 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile view expansion */
+@media (max-width: 480px) {
+  .frosted-glass {
+    width: 100%;
+
+    padding: 1rem;
+    margin: 10px 0;
+  }
+
+  .coco-page {
+    padding: 10px;
+  }
+
+  .Coco-details {
+    flex-direction: column;
+  }
+  .expand-btn {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background-color: rgba(var(--p-text-color), 0.3);
+    color: var(--s-text-color);
+    border: 1px solid var(--p-text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+  }
+
+  .expand-btn:hover {
+    background-color: rgba(var(--p-text-color), 0.5);
+  }
+
+  .expanded .frosted-glass {
+    max-height: none;
+  }
+}
