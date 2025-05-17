@@ -20,6 +20,7 @@ function Coco() {
 
   return (
     <div>
+      <div className="neon-grid-bg"></div>
       <div>
         {cocoInfo.map((item, index) => (
           <div key={index}>
@@ -29,7 +30,7 @@ function Coco() {
                   <div>
                     <p type="heading">{item.Title}</p>
                   </div>
-                  <button>{item.name}</button>
+                  <button className="CoCo-btn">{item.name}</button>
                 </div>
                 <div className="Coco-details">
                   <div type="text">{item.details}</div>
