@@ -2,7 +2,11 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+ 
 import { auth } from "../../../firebase";
+ 
+ 
+ 
 import "./style.css";
 
 export default function SignupPage() {
