@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
-import "./style.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebaseConfig"; // adjust this path if needed
 import { useRouter } from "next/navigation"; // for client-side navigation
+import { useState } from "react";
+// import { auth } from "../../firebaseConfig";
+//  // adjust this path if needed
+import { auth } from "../../../firebase";
+import "./style.css";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -70,9 +72,7 @@ export default function LoginPage() {
             Login
           </button>
 
-          {error && (
-            <p style={{ color: "red", marginTop: "10px" }}>{error}</p>
-          )}
+          {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
 
           <div className="signup-text">
             Don't have an account? <a href="./SignUpPage">Sign up</a>
